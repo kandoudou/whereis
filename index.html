@@ -1,0 +1,96 @@
+<head>
+		<meta content="1">
+		<meta charset="UTF-8">
+		<title>Where is ?</title>
+		<link rel="stylesheet" href="css/style.css">
+</head>
+<body style="text-align:center">
+	
+	<h1>Where is 
+		<span id="characterTitle0" class="targetCharacter">KymCam</span>
+		<span id="characterTitle1" class="targetCharacter">Angela</span>
+		<span id="characterTitle2" class="targetCharacter">Laurent</span>
+		<span id="characterTitle3" class="targetCharacter">Nadia</span>
+		<span id="characterTitle4" class="targetCharacter">Aurelie</span>
+		<span id="characterTitle5" class="targetCharacter">Sarah</span>
+		<span id="characterTitle6" class="targetCharacter">Cyrielle</span>
+		<span id="characterTitle7" class="targetCharacter">Sothyda</span>
+		<span id="characterTitle8" class="targetCharacter">Machime</span>
+		<span id="characterTitle9" class="targetCharacter">Berengere</span>
+		<span id="characterTitle10" class="targetCharacter">Nancy</span>
+		?
+	</h1>
+	
+
+	<div id="all_character">
+		<div id="switchCharacter">
+  <svg viewBox="0 0 200 100">
+    <path class="bar top"
+	    d="M0,83l36-36c0,0,27.6-27.6,34.8-34.8S90.1,0,101,0s20.2,4.6,27,10.1s11.5,13.4,14.2,20.8
+	c2.8,7.4,4.2,20.9,0,32.3c-4.2,11.4-10.3,17.7-18.4,23.9c-8.1,6.3-18.5,6.8-24,6.9c0,0-7-0.9-13.5-2.8S74,85.1,69.9,81.1S0,11,0,11
+	L0,83z"
+	  
+	></path>
+    <path class="bar bottom" d="M201.9,11l-36,36c0,0-27.6,27.6-34.8,34.8C123.9,89,111.8,94,100.9,94s-20.2-4.6-27-10.1
+	C67,78.5,62.4,70.5,59.7,63.1s-4.2-20.9,0-32.3S70,13.2,78.1,6.9S96.5,0.1,102,0c0,0,7,0.9,13.5,2.8s12.4,6.1,16.5,10.1
+	c4.1,4,69.9,70.1,69.9,70.1V11z"></path>
+  </svg>
+</div>
+		<a class="showCharacter" target="0"><img class="accueil_tete" src="img/lez.PNG" /></a>
+		<a class="showCharacter" target="1"><img class="accueil_tete" src="img/1.PNG" /></a>
+		<a class="showCharacter" target="2"><img class="accueil_tete" src="img/2.PNG" /></a>
+		<a class="showCharacter" target="3"><img class="accueil_tete" src="img/3.PNG" /></a>
+		<a class="showCharacter" target="4"><img class="accueil_tete" src="img/4.PNG" /></a>
+		<a class="showCharacter" target="5"><img class="accueil_tete" src="img/5.PNG" /></a>
+		<a class="showCharacter" target="6"><img class="accueil_tete" src="img/6.PNG" /></a>
+		<a class="showCharacter" target="7"><img class="accueil_tete" src="img/7.PNG" /></a>
+		<a class="showCharacter" target="8"><img class="accueil_tete" src="img/8.PNG" /></a>
+		<a class="showCharacter" target="9"><img class="accueil_tete" src="img/9.PNG" /></a>
+		<a class="showCharacter" target="10"><img class="accueil_tete" src="img/10.PNG" /></a>
+	</div>
+	
+	<div class="button__holder">
+		<a id="characterMenu0" class="buttonplay targetCharacter" href="game0.html"></a>
+		<a id="characterMenu1" class="buttonplay targetCharacter" href="game1.html"></a>
+		<a id="characterMenu2" class="buttonplay targetCharacter" href="game2.html"></a>
+		<a id="characterMenu3" class="buttonplay targetCharacter" href="game3.html"></a>
+		<a id="characterMenu4" class="buttonplay targetCharacter" href="game4.html"></a>
+		<a id="characterMenu5" class="buttonplay targetCharacter" href="game5.html"></a>
+		<a id="characterMenu6" class="buttonplay targetCharacter" href="game6.html"></a>
+		<a id="characterMenu7" class="buttonplay targetCharacter" href="game7.html"></a>
+		<a id="characterMenu8" class="buttonplay targetCharacter" href="game8.html"></a>
+		<a id="characterMenu9" class="buttonplay targetCharacter" href="game9.html"></a>
+		<a id="characterMenu10" class="buttonplay targetCharacter" href="game10.html"></a>
+	</div>
+
+
+
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+
+	<script>
+	$(document).ready(function(){
+	
+			$('.showCharacter').click(function(){
+				$('.targetCharacter').hide();
+				$('#characterTitle'+$(this).attr('target')).show();
+				$('#characterMenu'+$(this).attr('target')).css('display', 'inline-block');
+				$('a.showCharacter').removeClass("selected").addClass("hidden");
+				$(this).addClass("selected").removeClass("hidden");
+				$('#switchCharacter').css('display', 'inline');
+			});
+			$('#switchCharacter').click(function(){
+				$('#switchCharacter').css('display', 'none');
+				$('a.showCharacter').removeClass("selected").removeClass("hidden");
+				$('.targetCharacter').hide();				
+			});
+			
+			(function() {
+  $("div#switchCharacter").hover(function(){
+    $(this).toggleClass("anim");
+  })
+})();
+	});
+	</script>
+	<script>
+</script>
+</body>

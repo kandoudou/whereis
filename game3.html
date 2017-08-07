@@ -1,0 +1,95 @@
+<html>
+	<head>
+		<meta content="1">
+		<meta charset="UTF-8">
+		<title>Where is Angela?</title>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body id="game3">
+		<div id="chronoExample">
+			<div class="values">00:00:00</div>
+			<!--<div>
+					<button class="startButton">Start</button>
+					<button class="pauseButton" >Pause</button>
+					<button class="stopButton">Stop</button>
+			</div>-->
+		</div>
+          
+
+	<div id="light" class="white_content"><div class="values">00:00:00</div>Lezarman est la, lezarman est partout !!!!! <a href="javascript:void(0)" onclick="document.getElementById('light').style.display='none';document.getElementById('fade').style.display='none'">Close</a><input id="tryagain" type="button" onclick='window.location.reload(false)' value="ESSAIE ENCORE"/></div>
+	<div id="light-fail" class="white_content"><div class="values">00:00:00</div> Mais non ca c'est berengeman !!!!! <a href="javascript:void(0)" onclick="document.getElementById('light-fail').style.display='none';document.getElementById('fade').style.display='none'">Close</a></div>
+	<div id="fade" class="black_overlay" onclick="document.getElementById('light').style.display='none';document.getElementById('light-fail').style.display='none';document.getElementById('fade').style.display='none'"></div>
+	<div id="lezarman"></div>
+	
+	
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+<script src="js/counter.js"></script>
+
+<script>
+
+
+$(document).ready(function(){
+
+});
+
+
+
+$( "#lezarman" ).on( "click", ".box", function() {
+  document.getElementById('light-fail').style.display='block';document.getElementById('fade').style.display='block'
+});
+</script>
+
+<script>
+$(document).ready(function(){
+timer.start();
+  function freshDot(){
+    this.obj = document.createElement("div");
+    this.obj.classList.add("box", 'box' + Math.floor((Math.random() * 10) + 1));
+    this.obj.style.top = ((window.innerHeight-150) * Math.random())+74 + 'px';
+    this.obj.style.left = ((window.innerWidth-50) * Math.random()) + 'px';
+    this.size = Math.floor(5 * Math.random()) + 7;
+    this.obj.style.height =  '25px';
+    this.obj.style.width = '25px';
+    lezarman.appendChild(this.obj);
+  }
+  var dot = [];
+  for(var i = 0 ; i < 200 ; i++ ){dot.push(new freshDot());}
+  /*
+  $(window).resize(function(){for(i=0;i<200;i++){lezarman.removeChild(dot[i]);}});*/
+var n = 1;
+while( n <= 1){
+var t = parseInt(Math.random()* (window.innerHeight-150)+74 );
+var l = parseInt(Math.random()* (window.innerWidth-50));
+lezarman.innerHTML += "<div class='square stopButton' style='top:"+t+"px;left:"+l+"px'></div>"; n++;
+}
+
+        $('.square').click(function(){
+            $(this).animate({width:'100%',height:'100%',backgroundSize:'100%',top:'0',left:'0'}, 1000, function(){
+			  document.getElementById('light').style.display='block';document.getElementById('fade').style.display='block'
+			});
+        });
+		
+		
+});
+</script>
+<script>
+var timer = new Timer();
+$("body").on("click", ".startButton", (function () {
+    timer.start();
+}));
+$("body").on("click", ".pauseButton", function () {
+    timer.pause();
+});
+$("body").on("click", ".stopButton", function () {
+    timer.stop();
+});
+timer.addEventListener('secondsUpdated', function (e) {
+    $('.values').html(timer.getTimeValues().toString());
+});
+timer.addEventListener('started', function (e) {
+    $('.values').html(timer.getTimeValues().toString());
+});
+       
+</script>
+</body>
+</html>

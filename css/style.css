@@ -1,0 +1,303 @@
+*{
+	margin: 0;
+	padding: 0;
+
+}
+
+body{
+
+}
+
+/** ===============================================
+====================PAGE DACCUEI===================
+===================================================**/
+
+@font-face{
+    font-family : "circleFont";
+    src : url('font/circlefont.ttf');
+}
+
+h1{
+font-family: circleFont, Arial;
+    font-size: 60px;
+    margin-top: 100px;
+    margin-bottom: 100px;
+}
+.accueil_tete {
+	z-index: 8;
+width: 100px;
+height: 100px;
+    border-radius: 50%;
+    background-size: 25px;
+    background-repeat: no-repeat;
+}
+
+a.showCharacter {
+    display: inline-block;
+    -webkit-transform: perspective(1px) translateZ(0);
+    transform: perspective(1px) translateZ(0);
+    box-shadow: 0 0 1px transparent;
+    position: relative;
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform;
+    transition-property: transform;
+}
+
+a.showCharacter:before, a.showCharacter.selected:before {
+    pointer-events: none;
+    position: absolute;
+    z-index: -1;
+    content: '';
+    top: 100%;
+    left: 5%;
+    height: 10px;
+    width: 90%;
+    opacity: 0;
+    background: -webkit-radial-gradient(center, ellipse, rgba(0, 0, 0, 0.35) 0%, transparent 80%);
+    background: radial-gradient(ellipse at center, rgba(0, 0, 0, 0.35) 0%, transparent 80%);
+    -webkit-transition-duration: 0.3s;
+    transition-duration: 0.3s;
+    -webkit-transition-property: transform, opacity;
+    transition-property: transform, opacity;
+}
+
+a.showCharacter:hover, a.showCharacter.selected{
+    -webkit-transform: translateY(-10px);
+    transform: translateY(-10px);
+}
+
+a.showCharacter:hover:before, a.showCharacter.selected:before {
+    opacity: 1;
+    -webkit-transform: translateY(5px);
+    transform: translateY(5px);
+}
+
+a.showCharacter.hidden{
+display:none;
+} 
+#switchCharacter { display:none; width: 110px; transform: translate3D(-50%, -50%, 0); }
+
+ svg {     
+    width: 130px;
+    margin-right: 60px;
+    height: 100px;
+    padding: 5px;
+    overflow: visible;
+    cursor: pointer; 
+	
+	}
+ .bar { fill: none; stroke-width: 10px; stroke-linecap: round; stroke: black; stroke-dasharray: 88px 600px; transition: all 400ms cubic-bezier(0.25, 0.46, 0.45, 0.94); }
+ .bar.top { stroke-dashoffset: -7px; transform: translateX(50%); }
+ .bar.bottom { stroke-dashoffset: -315px; transform: translateX(-39%); }
+ .anim .bar.top { stroke-dasharray: 50px 600px; stroke-dashoffset: -308px; }
+ .anim .bar.bottom { stroke-dasharray: 50px 600px; stroke-dashoffset: -0px; } 
+
+.targetCharacter{
+display:none;
+}
+
+.buttonplay{
+position: relative;
+    z-index: 1;
+    text-decoration: none;
+    width: 80px;
+    height: 80px;
+    color: #1a1a1a;
+    background: #ed1c5b;
+    border-radius: 50%;
+    border: none;
+    transition: box-shadow 400ms cubic-bezier(.2,0,.7,1), transform 200ms cubic-bezier(.2,0,.7,1);
+}
+
+.button__holder {
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 60px;
+    justify-content: center;
+}
+
+.button__holder:after {
+    content: "";
+
+}
+
+.buttonplay:after {
+content: "PLAY";
+    font-size: 1.2em;
+    font-weight: bold;
+    font-family: circleFont;
+    line-height: 4.1em;
+}
+
+.buttonplay:hover {
+transform: rotate(360deg);
+    box-shadow: 0 0 1px 15px rgba(237, 28, 91, 0.4), 0 0 1px 30px rgba(237, 28, 91, 0.2), 0 0 1px 45px rgba(237, 28, 91, 0.1);
+}
+
+/** ===============================================
+==================FIN PAGE DACCUEI=================
+===================================================**/
+
+
+
+
+
+.circle {
+	position: relative;
+	width: 20px;
+	height: 20px;
+	border: 2px solid white;
+	border-radius: 1%;
+	float: left;
+
+}
+
+.box {
+	z-index: 8;
+    position: absolute;
+    border-radius: 50%;
+    background-size: 25px;
+    background-repeat: no-repeat;
+}
+
+.box1 {
+background-image: url('../img/1.PNG');
+}
+
+.box2 {
+background-image: url('../img/2.PNG');
+}
+
+.box3 {
+background-image: url('../img/3.PNG');
+}
+
+.box4 {
+background-image: url('../img/4.PNG');
+}
+
+.box5 {
+background-image: url('../img/5.PNG');
+}
+
+.box6 {
+background-image: url('../img/6.PNG');
+}
+
+.box7 {
+background-image: url('../img/7.PNG');
+}
+
+.box8 {
+background-image: url('../img/8.PNG');
+}
+
+.box9 {
+background-image: url('../img/9.PNG');
+}
+
+.box10 {
+background-image: url('../img/10.PNG');
+}
+
+.square {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    z-index: 100;
+    float: left;
+    border-radius: 50%;
+    background-position: center;
+    background-image: url(../img/lez.PNG);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+#game1 .box1, #game2 .box2, #game3 .box3 ,#game4 .box4 , #game5 .box5, #game6 .box6, #game7 .box7, #game8 .box8, #game9 .box9, #game10 .box10{
+    background-image: url(../img/lez.PNG);
+}
+#game1 .square{
+    background-image: url(../img/1.PNG);
+}
+#game2 .square{
+    background-image: url(../img/2.PNG);
+}
+#game3 .square{
+    background-image: url(../img/3.PNG);
+}
+#game4 .square{
+    background-image: url(../img/4.PNG);
+}
+#game5 .square{
+    background-image: url(../img/5.PNG);
+}
+#game6 .square{
+    background-image: url(../img/6.PNG);
+}
+#game7 .square{
+    background-image: url(../img/7.PNG);
+}
+#game8 .square{
+    background-image: url(../img/8.PNG);
+}
+#game9 .square{
+    background-image: url(../img/9.PNG);
+}
+#game10 .square{
+    background-image: url(../img/10.PNG);
+}
+
+
+.black_overlay {
+	display: none;
+	position: absolute;
+	top: 0%;
+	left: 0%;
+	width: 100%;
+	height: 100%;
+	text-align:center;
+	background-color: black;
+	z-index: 1001;
+	-moz-opacity: 0.8;
+	opacity: .80;
+	filter: alpha(opacity=80);
+}
+
+.white_content {
+	display: none;
+	text-align:center;
+	position: absolute;
+	top: 25%;
+	left: 25%;
+	width: 50%;
+	height: 50%;
+	padding: 16px;
+	border: 16px solid orange;
+	background-color: white;
+	z-index: 1002;
+	overflow: auto;
+}
+
+.values {
+	z-index: 1;
+    text-align: center;
+    font-size: 60px;
+    font-family: fantasy;
+    color: limegreen;
+}
+
+#light-fail .values {
+	color: red;
+}
+
+#lezarman {
+
+}
+
+#tryagain {
+    display: block;
+    margin: auto;
+}
